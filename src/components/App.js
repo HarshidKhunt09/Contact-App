@@ -3,12 +3,12 @@ import React, { useState, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { Routes, Route } from "react-router-dom";
 import api from '../api/contacts';
-import './App.css';
 import Header from '../components/Header'
 import AddContact from '../components/AddContact'
 import ContactList from '../components/ContactList'
 import ContactDetail from './ContactDetail';
 import EditContact from './EditContact';
+import './App.css';
 
 export const UserContext = React.createContext()
 

@@ -1,13 +1,16 @@
-import React, { useContext } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import React from 'react'
+import { Link } from 'react-router-dom'
 import userP from '../images/avatar.png'
-import { UserContext } from './App'
+import {useLocation} from 'react-router-dom';
+
 
 const ContactDetail = () => {
 
-    const users = useContext(UserContext)
-    const { id } = useParams();
-    const contactDetail = users.find((user) => user.id === id)
+    const location = useLocation();
+    console.log({location})
+    console.log("MY STATE",location.state)
+
+    const {name, email} = location.state;
 
     return (
         <div className='main'>
@@ -16,8 +19,8 @@ const ContactDetail = () => {
                     <img src={userP} alt='user' />
                 </div>
                 <div className='content'>
-                    <div className='header'>{contactDetail.name}</div>
-                    <div className='description'>{contactDetail.email}</div>
+                    <div className='header'>{name}</div>
+                    <div className='description'>{email}</div>
                 </div>
             </div>
             <div className='center-div'>
